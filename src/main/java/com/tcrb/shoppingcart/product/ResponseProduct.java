@@ -10,5 +10,5 @@ public class ResponseProduct {
     private double price;
     private int availability;
     private String brand;
-    private String imageName;
+
 }

@@ -25,4 +25,5 @@ public class Product {
     private int availability;
     @Column(name = "brand")
     private String brand;
+
 }
