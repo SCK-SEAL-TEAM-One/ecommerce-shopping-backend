@@ -26,7 +26,7 @@ public class ProductController {
             ResponseProduct responseProduct = new ResponseProduct();
             responseProduct.setId(product.getId());
             responseProduct.setName(product.getToyName());
-            responseProduct.setGenderId(product.getGender());
+            responseProduct.setGenderId(product.getGenderId());
             responseProduct.setAgeId(product.getAgeId());
             responseProduct.setPrice(product.getPrice());
             responseProduct.setAvailability(product.getAvailability());
