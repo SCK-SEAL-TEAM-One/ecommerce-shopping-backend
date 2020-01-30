@@ -21,12 +21,12 @@ public class ProductController {
             @RequestParam(name="gender_id") String genderId)
     {
         List<ResponseProduct> responseProductList = new ArrayList<>();
-        List<Product> productList = (List<Product>) productRepository.findByAgeAndGender(ageId,genderId);
+        Iterable<Product> productList = productRepository.findByAgeIdAndGenderId(ageId,genderId);
         for (Product product : productList) {
             ResponseProduct responseProduct = new ResponseProduct();
             responseProduct.setId(product.getId());
             responseProduct.setName(product.getToyName());
-            responseProduct.setGenderId(product.getGender());
+            responseProduct.setGenderId(product.getGenderId());
             responseProduct.setAgeId(product.getAgeId());
             responseProduct.setPrice(product.getPrice());
             responseProduct.setAvailability(product.isProductIsAvailable());

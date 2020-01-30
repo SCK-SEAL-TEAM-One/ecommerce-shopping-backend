@@ -1,12 +1,10 @@
 package com.tcrb.shoppingcart.product;
 
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.http.ResponseEntity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,7 +46,7 @@ class ProductControllerTest {
         stubProductList.add(product);
         stubProductList.add(product2);
 
-        given(productRepository.findByAgeAndGender(ageId,genderId))
+        given(productRepository.findByAgeIdAndGenderId(ageId,genderId))
                 .willReturn(stubProductList);
 
         ResponseProduct[] result

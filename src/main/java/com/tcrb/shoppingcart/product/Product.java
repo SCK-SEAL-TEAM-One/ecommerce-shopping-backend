@@ -16,7 +16,7 @@ public class Product {
     @Column(name = "toy_name")
     private String toyName;
     @Column(name = "gender_id")
-    private String gender;
+    private String genderId;
     @Column(name = "age_id")
     private int ageId;
     @Column(name = "price")
