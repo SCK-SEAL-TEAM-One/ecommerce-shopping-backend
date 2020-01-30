@@ -26,7 +26,4 @@ public class Product {
     @Column(name = "brand")
     private String brand;
 
-    public boolean isProductIsAvailable(){
-        return this.availability > 0;
-    }
 }
