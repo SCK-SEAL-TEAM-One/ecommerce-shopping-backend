@@ -17,11 +17,11 @@ public class ProductController {
 
     @GetMapping("/api/v1/products")
     public List<ResponseProduct> getProductList(
-            @RequestParam(required = false, name="age_id") Integer ageId,
-            @RequestParam(required = false, name="gender_id") Integer genderId)
+            @RequestParam(name="age_id") int ageId,
+            @RequestParam(name="gender_id") String genderId)
     {
         List<ResponseProduct> responseProductList = new ArrayList<>();
-        List<Product> productList = (List<Product>) productRepository.findAll();
+        List<Product> productList = (List<Product>) productRepository.findByAgeAndGender(ageId,genderId);
         for (Product product : productList) {
             ResponseProduct responseProduct = new ResponseProduct();
             responseProduct.setId(product.getId());

@@ -28,7 +28,9 @@ class ProductControllerTest {
     ProductRepository productRepository;
 
     @Test
-    void getProductListShouldGetAllProducts() {
+    void getProductListByGenderIdFAndAgeId2ShouldProducts() {
+        int ageId = 2;
+        String genderId = "F";
 
         List<Product> stubProductList = new ArrayList<>();
         Product product = new Product();
@@ -46,11 +48,11 @@ class ProductControllerTest {
         stubProductList.add(product);
         stubProductList.add(product2);
 
-        given(productRepository.findAll())
+        given(productRepository.findByAgeAndGender(ageId,genderId))
                 .willReturn(stubProductList);
 
         ResponseProduct[] result
-                = restTemplate.getForObject("/api/v1/products", ResponseProduct[].class);
+                = restTemplate.getForObject("/api/v1/products?age_id=2&gender_id=F", ResponseProduct[].class);
 
         assertEquals(2,result.length);
         assertEquals("Balance Training Bicycle",result[0].getName());
