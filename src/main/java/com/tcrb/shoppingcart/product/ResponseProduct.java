@@ -8,7 +8,7 @@ public class ResponseProduct {
     private String genderId;
     private int ageId;
     private double price;
-    private boolean availability;
+    private int availability;
     private String brand;
 
 }

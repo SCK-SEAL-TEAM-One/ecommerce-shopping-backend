@@ -56,18 +56,41 @@ class ProductControllerTest {
 
         assertEquals(2,result.length);
         assertEquals("Balance Training Bicycle",result[0].getName());
+        assertEquals(result[0].getAvailability(),product.getAvailability());
         assertEquals("43 Piece dinner Set",result[1].getName());
+        assertEquals(result[1].getAvailability(),product.getAvailability());
     }
 
     @Test
     void getProductByDetail() {
-        stubproduct.setId(1);
-        stubproduct.setName("Balance Trainning Bicycle");
 
+
+        Product stubProduct = new Product();
+
+        stubProduct.setId(30);
+        stubProduct.setToyName("Fisher-Price stroller");
+        stubProduct.setGender("F");
+        stubProduct.setAgeId(2);
+        stubProduct.setPrice(25.99);
+        stubProduct.setAvailability(10);
+        stubProduct.setBrand("CoolKidz");
+
+
+        given(productRepository.findById(30)).willReturn(Optional.of(stubProduct));
         ResponseProduct result
-                = restTemplate.getForObject("/api/v1/products/1", ResponseProduct.class);
-        assertEquals(1,result.getId());
-        assertEquals("Balance Trainning Bicycle",result.getName());
+                = restTemplate.getForObject("/api/v1/products/30", ResponseProduct.class);
+
+        assertEquals(stubProduct.getId(),result.getId());
+        assertEquals(stubProduct.getToyName(),result.getName());
+        assertEquals(stubProduct.getGender(),result.getGenderId());
+        assertEquals(stubProduct.getAgeId(),result.getAgeId());
+        assertEquals(stubProduct.getPrice(),result.getPrice());
+        assertEquals(stubProduct.getAvailability(),result.getAvailability());
+        assertEquals(stubProduct.getBrand(),result.getBrand());
+
+
+
+
     }
 
 

@@ -29,7 +29,7 @@ public class ProductController {
             responseProduct.setGenderId(product.getGender());
             responseProduct.setAgeId(product.getAgeId());
             responseProduct.setPrice(product.getPrice());
-            responseProduct.setAvailability(product.isProductIsAvailable());
+            responseProduct.setAvailability(product.getAvailability());
             responseProductList.add(responseProduct);
         }
 
@@ -40,15 +40,14 @@ public class ProductController {
     public ResponseProduct getProductDetail(@PathVariable String id)
     {
         ResponseProduct responseProduct = new ResponseProduct();
-        responseProduct.setId(1);
-        responseProduct.setName("Balance Trainning Bicycle");
-//        ResponseProduct responseProduct = new ResponseProduct();
-//        responseProduct.id = 1;
-//        responseProduct.name = "product1";
-//        responseProduct.price = 100.00;
-//        responseProduct.brand = "Adda";
-//        responseProductList.add(responseProduct);
-
+        Product p = productRepository.findById(Integer.parseInt(id)).get();
+        responseProduct.setId(p.getId());
+        responseProduct.setName(p.getToyName());
+        responseProduct.setGenderId(p.getGender());
+        responseProduct.setBrand(p.getBrand());
+        responseProduct.setPrice(p.getPrice());
+        responseProduct.setAgeId(p.getAgeId());
+        responseProduct.setAvailability(p.getAvailability());
         return responseProduct;
     }
 }
