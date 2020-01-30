@@ -9,14 +9,6 @@ com.tcrb.shoppingcart.(ระบุ domain).(ระบุ subpackage)
   - shipping
   - payment
   
- ชื่อ Subpackage ประกอบด้วย
-  - controller
-  - pojo
-  - api
-  - dao
-  - logic
-    
-  
   # Commit Message
   เริ่มต้นด้วย tag ต่อไปนี้ แล้วตามด้วยข้อความรายละเอียด ใช้ภาษาไทยเท่านั้น
   [created] สร้างไฟล์ใหม่
@@ -38,29 +30,10 @@ com.tcrb.shoppingcart.(ระบุ domain).(ระบุ subpackage)
   - ใส่ Parameter จะ Return Detail ของข้อมูล
   
   # Project package structure
-  com.tcrb.shoppingcart.product.controller
-  com.tcrb.shoppingcart.product.dao
-  com.tcrb.shoppingcart.product.pojo
-  com.tcrb.shoppingcart.product.logic
-  com.tcrb.shoppingcart.product.api
-  
-  com.tcrb.shoppingcart.customer.controller
-  com.tcrb.shoppingcart.customer.dao
-  com.tcrb.shoppingcart.customer.pojo
-  com.tcrb.shoppingcart.customer.logic
-  com.tcrb.shoppingcart.customer.api
-  
-  com.tcrb.shoppingcart.payment.controller
-  com.tcrb.shoppingcart.payment.dao
-  com.tcrb.shoppingcart.payment.pojo
-  com.tcrb.shoppingcart.payment.logic
-  com.tcrb.shoppingcart.payment.api
-  
-  com.tcrb.shoppingcart.shipping.controller
-  com.tcrb.shoppingcart.shipping.dao
-  com.tcrb.shoppingcart.shipping.pojo
-  com.tcrb.shoppingcart.shipping.logic
-  com.tcrb.shoppingcart.payment.api
+  com.tcrb.shoppingcart.product  
+  com.tcrb.shoppingcart.customer  
+  com.tcrb.shoppingcart.payment  
+  com.tcrb.shoppingcart.shipping  
   
  # Database setup 
  Database user : admin_2
