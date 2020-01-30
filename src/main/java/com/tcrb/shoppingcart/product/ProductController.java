@@ -43,7 +43,7 @@ public class ProductController {
         Product p = productRepository.findById(Integer.parseInt(id)).get();
         responseProduct.setId(p.getId());
         responseProduct.setName(p.getToyName());
-        responseProduct.setGenderId(p.getGender());
+        responseProduct.setGenderId(p.getGenderId());
         responseProduct.setBrand(p.getBrand());
         responseProduct.setPrice(p.getPrice());
         responseProduct.setAgeId(p.getAgeId());

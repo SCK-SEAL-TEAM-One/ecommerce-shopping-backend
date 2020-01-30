@@ -68,7 +68,7 @@ class ProductControllerTest {
 
         stubProduct.setId(30);
         stubProduct.setToyName("Fisher-Price stroller");
-        stubProduct.setGender("F");
+        stubProduct.setGenderId("F");
         stubProduct.setAgeId(2);
         stubProduct.setPrice(25.99);
         stubProduct.setAvailability(10);
@@ -81,7 +81,7 @@ class ProductControllerTest {
 
         assertEquals(stubProduct.getId(),result.getId());
         assertEquals(stubProduct.getToyName(),result.getName());
-        assertEquals(stubProduct.getGender(),result.getGenderId());
+        assertEquals(stubProduct.getGenderId(),result.getGenderId());
         assertEquals(stubProduct.getAgeId(),result.getAgeId());
         assertEquals(stubProduct.getPrice(),result.getPrice());
         assertEquals(stubProduct.getAvailability(),result.getAvailability());
