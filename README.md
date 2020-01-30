@@ -11,9 +11,9 @@ com.tcrb.shoppingcart.(ระบุ domain).(ระบุ subpackage)
   
   # Commit Message
   เริ่มต้นด้วย tag ต่อไปนี้ แล้วตามด้วยข้อความรายละเอียด ใช้ภาษาไทยเท่านั้น
-  [created] สร้างไฟล์ใหม่
-  [edited] แก้ไข หรือ เพิ่ม function code ในไฟล์เดิมที่มีอยู่แล้ว รวมถึงกรณี refactor code
-  [deleted] ลบไฟล์ออก
+  [Created] สร้างไฟล์ใหม่
+  [Edited] แก้ไข หรือ เพิ่ม function code ในไฟล์เดิมที่มีอยู่แล้ว รวมถึงกรณี refactor code
+  [Deleted] ลบไฟล์ออก
   
   
   # การทำงานกับ Resource
@@ -35,11 +35,3 @@ com.tcrb.shoppingcart.(ระบุ domain).(ระบุ subpackage)
   com.tcrb.shoppingcart.payment  
   com.tcrb.shoppingcart.shipping  
   
- # Database setup 
- Database user : admin_2
- 
- Password : 111111
- 
- URL : 54.169.131.113:5432
- 
- Database Name : shopping
