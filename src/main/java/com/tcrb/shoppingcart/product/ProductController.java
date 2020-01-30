@@ -7,24 +7,31 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 public class ProductController {
+
     @Autowired
     private ProductRepository productRepository;
 
     @GetMapping("/api/v1/products")
-    public ArrayList<ResponseProduct> getProductList(@RequestParam Integer age_id,@RequestParam Integer gender_id)
+    public List<ResponseProduct> getProductList(
+            @RequestParam(required = false, name="age_id") Integer ageId,
+            @RequestParam(required = false, name="gender_id") Integer genderId)
     {
-        ArrayList<ResponseProduct> responseProductList = new ArrayList<ResponseProduct>();
-
-
-//        ResponseProduct responseProduct = new ResponseProduct();
-//        responseProduct.id = 1;
-//        responseProduct.name = "product1";
-//        responseProduct.price = 100.00;
-//        responseProduct.brand = "Adda";
-//        responseProductList.add(responseProduct);
+        List<ResponseProduct> responseProductList = new ArrayList<>();
+        List<Product> productList = (List<Product>) productRepository.findAll();
+        for (Product product : productList) {
+            ResponseProduct responseProduct = new ResponseProduct();
+            responseProduct.setId(product.getId());
+            responseProduct.setName(product.getToyName());
+            responseProduct.setGenderId(product.getGender());
+            responseProduct.setAgeId(product.getAgeId());
+            responseProduct.setPrice(product.getPrice());
+            responseProduct.setAvailability(product.isProductIsAvailable());
+            responseProductList.add(responseProduct);
+        }
 
         return responseProductList;
     }

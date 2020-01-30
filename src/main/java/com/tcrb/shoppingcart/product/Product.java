@@ -22,7 +22,11 @@ public class Product {
     @Column(name = "price")
     private Double price;
     @Column(name = "availability")
-    private String availability;
+    private int availability;
     @Column(name = "brand")
     private String brand;
+
+    public boolean isProductIsAvailable(){
+        return this.availability > 0;
+    }
 }
