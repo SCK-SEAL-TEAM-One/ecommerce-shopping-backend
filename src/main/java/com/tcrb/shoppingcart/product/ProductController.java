@@ -21,7 +21,7 @@ public class ProductController {
             @RequestParam(name="gender_id") String genderId)
     {
         List<ResponseProduct> responseProductList = new ArrayList<>();
-        List<Product> productList = (List<Product>) productRepository.findByAgeAndGender(ageId,genderId);
+        List<Product> productList = (List<Product>) productRepository.findByAgeIdAndGenderId(ageId,genderId);
         for (Product product : productList) {
             ResponseProduct responseProduct = new ResponseProduct();
             responseProduct.setId(product.getId());

@@ -48,7 +48,7 @@ class ProductControllerTest {
         stubProductList.add(product);
         stubProductList.add(product2);
 
-        given(productRepository.findByAgeAndGender(ageId,genderId))
+        given(productRepository.findByAgeIdAndGenderId(ageId,genderId))
                 .willReturn(stubProductList);
 
         ResponseProduct[] result
@@ -56,9 +56,7 @@ class ProductControllerTest {
 
         assertEquals(2,result.length);
         assertEquals("Balance Training Bicycle",result[0].getName());
-        assertTrue(result[0].isAvailability());
         assertEquals("43 Piece dinner Set",result[1].getName());
-        assertTrue(result[1].isAvailability());
     }
 
     @Test
