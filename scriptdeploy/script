@@ -1,0 +1,5 @@
+#Deploy Script
+scp -i <file.pem> -r ecommerce-shopping-backend/target/<filename> ubuntu@ec2-52-77-209-133.ap-southeast-1.compute.amazonaws.com:/opt/
+
+#Running Script
+./opt/runapp.sh
